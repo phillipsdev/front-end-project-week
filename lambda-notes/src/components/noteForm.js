@@ -7,7 +7,7 @@ class NoteForm extends Component {
   state = {
     title: "",
     text: "",
-    redirect: false,
+    redirect: false
   };
 
   render() {

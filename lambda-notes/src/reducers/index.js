@@ -2,7 +2,7 @@ import { ADD_NOTE, VIEW_NOTE, EDIT_NOTE, DELETE_NOTE } from "../actions";
 import notes from "../dummyNotes";
 
 const initialState = {
-  notes: [...notes],
+  notes: [...notes]
 };
 console.log(initialState);
 export const rootReducer = (state = initialState, action) => {
@@ -10,7 +10,7 @@ export const rootReducer = (state = initialState, action) => {
     case ADD_NOTE:
       return {
         ...state,
-        notes: state.notes.concat(action.payload),
+        notes: state.notes.concat(action.payload)
       };
 
     case VIEW_NOTE:
@@ -23,14 +23,15 @@ export const rootReducer = (state = initialState, action) => {
             return action.payload;
           }
           return note;
-        }),
+        })
       };
 
     case DELETE_NOTE:
       return {
-        ...state.filter(note => {
+        ...state,
+        notes: state.notes.filter(note => {
           return note.id !== action.payload;
-        }),
+        })
       };
 
     default:
